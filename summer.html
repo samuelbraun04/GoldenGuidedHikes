@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Landing Page</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <style>
+    /* Customize the scrollbar for webkit browsers (Chrome, Safari, etc.) */
+    ::-webkit-scrollbar {
+      width: 5px; /* Set the width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      /* background-color: #FFFFFF; Set the background color of the scrollbar track */
+      /* background-image: url("resources/images/Dolomites_Italy.jpg");
+       */
+       background-color: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: black; /* Set the color of the scrollbar thumb */
+      /* border-radius: 100px; Set the rounded corners of the scrollbar thumb */
+    }
+
+  </style>
+  <style>
+    html,
+    body {
+      height: 100%;
+      background-image: url('/resources/images/summerGE2osA.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keep the background fixed while scrolling */
+    }
+
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+      margin-bottom: 400px;
+    }
+
+    .jumbotron {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    .card img {
+    height: 300px; /* Adjust the height as per your requirement */
+    object-fit: cover;
+  }
+
+    .footer {
+      background-color: #023020;
+      border-color: black;
+      background-image: url("resources/images/360_F_258766852_R1gV6SCbS6D4V7GX8gbhQw7nimQY9KOR.jpg");
+      padding: 5px;
+      border-top: 2px solid black;
+      /* margin-top: auto; */
+    }
+
+    .navbar .nav-link {
+      color: white;
+      border: 3px solid white;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      /* padding: 0.5rem 1rem; */
+      transition: background-color 0.7s;
+      padding-left: 15px; /* Add padding inside the navbar buttons */
+      padding-right: 15px; /* Add padding inside the navbar buttons */
+}
+
+
+    .navbar .nav-link:hover {
+      background-color: white; /* Change the background color on hover */
+      color: #023020; /* Change the text color on hover */
+    }
+
+    .navbar .nav-link:hover.btn-primary {
+      background-color: white; /* Change the background color of the "BOOK A HIKE" button on hover */
+      color: #023020; /* Change the text color of the "BOOK A HIKE" button on hover */
+    }
+
+    .navbar-brand {
+      padding: 0;
+      font-size: 40px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .navbar-brand img {
+      height: 100px;
+      /* Adjust the height as desired */
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+    }
+
+    .nav-spacing .nav-link {
+      margin-right: 35px;
+    }
+
+    .nav-link {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .jumbotron .btn-primary {
+      margin-top: 20px;
+    }
+
+    .bigger-button {
+      font-size: 35px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 100px;
+      padding-left: 100px;
+      border-radius: 50px;
+      letter-spacing: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-color: black;
+      font-weight: 500;
+    }
+
+    .bigger-button:hover {
+
+      background-image: url("resources/images/Dolomites_Italy.jpg");
+      border-color: white;
+      transition: background-image 1s;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 1000;
+    }
+
+    .big-text {
+      font-size: 175px;
+      color: white;
+      font-style: bold;
+      font-weight: 800;
+      margin-top: -50px;
+      margin-right: -30px;
+      opacity: 0.95;
+    }
+
+    .logo-look {
+      height: 250px;
+      /* Adjust the height as desired */
+      width: auto;
+    }
+
+    .slogan {
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .fab {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .extra {
+      font-size: 18px;
+    }
+
+    .footer-header {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .contacts {
+      margin-bottom: 20px;
+    }
+
+    .content {
+        margin-top: 20px;
+    }
+
+    .card-title {
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .card-text {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+    }
+
+    .fa-chevron-down {
+        font-size: 15px;
+    }
+
+    .heading1 {
+        font-size: 30px;
+        color: black;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .accord {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: black;
+    }
+
+    .description {
+        margin-top: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .inner-text {
+        color: black;
+        font-size: 17px;
+    }
+
+    .main-title {
+        font-size: 100px;
+        text-align: center;
+        color: white;
+        font-weight: 700;
+    }
+
+    .navbar-brand:hover{
+      color:white;
+    }
+
+    .subtitle {
+        font-size: 23px;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 30px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .no-underline {
+      text-decoration: none;
+      color: lightblue;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="/resources/images/logo.png" alt="Logo">
+          Golden Guided Hikes
+        </a>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav ml-auto nav-spacing">
+            <li class="nav-item">
+              <a class="nav-link" href="hikes.html">&nbsp&nbspHIKES&nbsp&nbsp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="meetourguides.html">&nbsp&nbspMEET OUR GUIDES&nbsp&nbsp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bookahike.html">&nbsp&nbspBOOK A HIKE&nbsp&nbsp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">&nbsp&nbspABOUT US&nbsp&nbsp</a>
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+          <h1 class="main-title">
+            SUMMER
+          </h1>
+          <h2 class="subtitle">
+            Guided summer trails run from June 21st - September 23rd
+          </h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <img src="/resources/images/yosey.jpeg" class="card-img-top" alt="Hike 1">
+                <div class="card-body">
+                    <h5 class="card-title">Yosemite Hiking Trail</h5>
+                    <p class="card-text"><strong>Difficulty:</strong> Difficult</p>
+                    <p class="card-text"><strong>Length:</strong> 14 hours</p>
+                    <p class="card-text"><strong>Distance:</strong> 48.2 km / 30 miles</p>
+                    <p class="card-text"><strong>Price:</strong> Starting at 384.99 USD</p>
+                    <p class="card-text"><strong>Starting Point:</strong> California 95389, United States</p>
+                    <div class="mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d201813.4837368664!2d-119.7100437!3d37.7821722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8096faeb0eb9265b%3A0x48d7174efeea368f!2sYosemite%20Creek%20And%20Ten%20Lakes%20Trailhead!5e0!3m2!1sen!2sca!4v1686273137015!5m2!1sen!2sca" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                  <div class="description">
+                    <h2 class="heading1">Things to Know</h2>
+                    <p></p>
+                    <h3 class="accord">General <i class="fas fa-chevron-down"></i></h3>
+                    <ul class="inner-text">
+                      <li>Permits and Reservations: Check if the hiking trail requires permits or reservations in advance, as some areas in Yosemite have limited access.</li>
+                      <li>Trail Difficulty: Be aware of the trail's difficulty level and make sure it suits your fitness level and hiking experience.</li>
+                      <li>Weather Conditions: Keep an eye on the weather forecast and be prepared for changing weather conditions in the mountains. Dress in layers and bring appropriate gear.</li>
+                      <li>Bear Safety: Yosemite is home to black bears, so familiarize yourself with bear safety guidelines and proper food storage techniques.</li>
+                      <li>Leave No Trace: Practice Leave No Trace principles by respecting the environment, staying on designated trails, and packing out all trash.</li>
+                    </ul>
+                    <h3 class="accord">How to Prepare <i class="fas fa-chevron-down"></i></h3>
+                    <ul class="inner-text">
+                      <li>Footwear and Clothing: Wear comfortable hiking boots or shoes with good traction, and dress in layers to adapt to changing weather conditions.</li>
+                      <li>Water and Snacks: Carry enough water to stay hydrated during the hike, and pack lightweight, high-energy snacks for fuel.</li>
+                      <li>Hiking Gear: Bring essentials such as a backpack, a trail map or guidebook, a compass, a first aid kit, sunscreen, and insect repellent.</li>
+                      <li>Navigation: Familiarize yourself with the trail map and route, and consider bringing a GPS device or compass for navigation.</li>
+                      <li>Emergency Preparedness: Inform someone about your hiking plans, carry a whistle or signaling device, and be prepared for emergencies.</li>
+                    </ul>
+                    <h3 class="accord">Notable Features <i class="fas fa-chevron-down"></i></h3>
+                    <ul class="inner-text">
+                      <li>Breathtaking Scenery: Experience the awe-inspiring beauty of Yosemite National Park, with its towering granite cliffs, majestic waterfalls, and lush forests.</li>
+                      <li>Iconic Landmarks: Discover famous landmarks like Half Dome, El Capitan, and Yosemite Falls along the hiking trail.</li>
+                      <li>Wildlife Viewing: Keep an eye out for diverse wildlife, including black bears, mule deer, coyotes, and a variety of bird species.</li>
+                      <li>Photography Opportunities: Capture stunning photos of the natural wonders and stunning vistas that Yosemite has to offer.</li>
+                      <li>Water Features: Encounter pristine rivers, sparkling alpine lakes, and cascading waterfalls throughout the trail.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                  <img src="/resources/images/quineula.jpg" class="card-img-top" alt="Hike 1">
+                  <div class="card-body">
+                    <h5 class="card-title">Quinault Hiking Trail</h5>
+                    <p class="card-text"><strong>Difficulty:</strong> Moderate</p>
+                    <p class="card-text"><strong>Length:</strong> 11 hours</p>
+                    <p class="card-text"><strong>Distance:</strong> 39.6 km / 24.6 miles</p>
+                    <p class="card-text"><strong>Price:</strong> Starting at 316.99 USD</p>
+                    <p class="card-text"><strong>Starting Point:</strong> S Shore Rd, Quinault, WA 98575, United States</p>
+                    <div class="mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21580.34930572091!2d-123.9004407256836!3d47.4598342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5491fdfd65e2b8b5%3A0x487c65a6525390f6!2sQuinault%20Rain%20Forest%20Trailhead!5e0!3m2!1sen!2sca!4v1686273300242!5m2!1sen!2sca" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="description">
+                      <h2 class="heading1">Things to Know</h2>
+                      <p></p>
+                      <h3 class="accord">General <i class="fas fa-chevron-down"></i></h3>
+                      <ul class="inner-text">
+                        <li>Trail Difficulty: Be aware of the trail's difficulty level, as hiking in deep forest areas may involve steep inclines, uneven terrain, and limited signage.</li>
+                        <li>Navigation: Pay attention to trail markers, carry a map or compass, and consider using a GPS device or hiking app to navigate through the forest.</li>
+                        <li>Weather Conditions: Be prepared for changes in weather, as the forest environment can create microclimates with variations in temperature, humidity, and precipitation.</li>
+                        <li>Wildlife Awareness: Respect the natural habitat of wildlife species and keep a safe distance. Familiarize yourself with potential encounters, such as snakes or bears, and know the appropriate response.</li>
+                        <li>Leave No Trace: Practice Leave No Trace principles by minimizing your impact on the environment, packing out all trash, and avoiding the disturbance of plants and animals.</li>
+                      </ul>
+                      <h3 class="accord">How to Prepare <i class="fas fa-chevron-down"></i></h3>
+                      <ul class="inner-text">
+                        <li>Appropriate Footwear: Wear sturdy hiking boots or shoes with good traction to navigate the forest terrain and protect your feet.</li>
+                        <li>Layered Clothing: Dress in layers to adapt to changing temperatures and conditions within the forest. Consider moisture-wicking materials and bring a waterproof jacket in case of rain.</li>
+                        <li>Essential Gear: Carry a backpack with essentials such as water, snacks, a first aid kit, a flashlight, a multitool, a whistle, and a trail map or guidebook.</li>
+                        <li>Insect Protection: Apply insect repellent to protect against mosquitoes, ticks, and other forest insects. Consider wearing long sleeves and pants for added protection.</li>
+                        <li>Hiking in a Group: If possible, hike with a companion or in a group for safety and to enhance the overall experience. Inform someone about your hiking plans.</li>
+                      </ul>
+                      <h3 class="accord">Notable Features <i class="fas fa-chevron-down"></i></h3>
+                      <ul class="inner-text">
+                        <li>Lush Forest Canopy: Immerse yourself in the beauty of a dense forest canopy, providing shade and a cool environment during your hike.</li>
+                        <li>Tranquil Atmosphere: Experience a sense of serenity as you journey deep into the forest, surrounded by the sounds of nature.</li>
+                        <li>Flora and Fauna: Discover a diverse array of plant and animal species that call the forest their home, including towering trees, wildflowers, and woodland creatures.</li>
+                        <li>Hidden Waterfalls: Encounter hidden waterfalls along the trail, cascading down rocky cliffs and creating beautiful natural scenes.</li>
+                        <li>Peaceful Trails: Enjoy the solitude of less-traveled paths, away from the hustle and bustle of crowded hiking trails.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <footer class="text-white footer">
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-6">
+                  <text class="footer-brand">Golden Guided Hikes</text>
+                  <p><text class="slogan">Discover Nature's Secrets</text></p>
+                  <img class="logo-look" src="/resources/images/logo.png" alt="Logo">
+                </div>
+                <div class="col-sm-6">
+                  <p class="extra"><text class="footer-header contacts">Contact Information:</text></p>
+                  <p class="extra"><i class="fas fa-phone contacts"></i>&nbsp&nbsp1-476-635-5763</p>
+                  <p class="extra"><i class="fas fa-envelope contacts"></i>&nbsp&nbspcontact@goldengh.com</p>
+                  <p class="extra"><text >Office Hours:</text ><br> 9AM - 5PM (CES) [Mon - Fri]</p>
+                  <p class="extra"><text >Trail Hours:</text> <br> 9AM - 9PM (Local) [Mon - Sat]</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p><text class="footer-header">Socials:</text></p>
+                  <p>
+                    <a href="https://instagram.com/goldenguidedhikesig" class="no-underline">
+                      <i class="fab fa-instagram"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikesig</text>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://facebook.com/goldenguidedhikesfb" class="no-underline">
+                      <i class="fab fa-facebook"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikesfb</text>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://snapchat.com/add/goldenguidedhikeschat" class="no-underline">
+                      <i class="fab fa-snapchat"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikeschat</text>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://youtube.com/c/goldenguidedhikesyt" class="no-underline">
+                      <i class="fab fa-youtube"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikesyt</text>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://twitter.com/goldenguidedhikestw" class="no-underline">
+                      <i class="fab fa-twitter"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikestw</text>
+                    </a>
+                  </p>
+                </div>
+                
+                <div class="col-sm-6">
+                  <p><text class="footer-header">Location:</text></p>
+                  <p class="extra"><i class="fas fa-map-marker-alt contacts"></i>&nbsp&nbsp19 Bd Malesherbes</p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2788780274836!2d2.318968076129383!3d48.87195997133387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fcb62f59479%3A0x69dd75fbe3b08828!2s19%20Bd%20Malesherbes%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2sca!4v1686274618051!5m2!1sen!2sca" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+  </div>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script>
+    $(function() {
+      $(".description").accordion({
+        collapsible: true,
+        heightStyle: "content",
+      });
+    });
+  </script>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Landing Page</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Customize the scrollbar for webkit browsers (Chrome, Safari, etc.) */
+    ::-webkit-scrollbar {
+      width: 5px; /* Set the width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      /* background-color: #FFFFFF; Set the background color of the scrollbar track */
+      /* background-image: url("resources/images/Dolomites_Italy.jpg");
+       */
+       background-color: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: black; /* Set the color of the scrollbar thumb */
+      /* border-radius: 100px; Set the rounded corners of the scrollbar thumb */
+    }
+
+  </style>
+  <style>
+    html,
+    body {
+      height: 100%;
+      /* background-image: url('/resources/images/Dolomites_Italy.jpg');
+       */
+    background-color: BLACK;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keep the background fixed while scrolling */
+    }
+
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+      margin-bottom: 150px;
+    }
+
+    .jumbotron {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    .footer {
+      background-color: #023020;
+      border-color: black;
+      background-image: url("resources/images/360_F_258766852_R1gV6SCbS6D4V7GX8gbhQw7nimQY9KOR.jpg");
+      padding: 5px;
+      border-top: 2px solid black;
+      /* margin-top: auto; */
+    }
+
+    .navbar .nav-link {
+      color: white;
+      border: 3px solid white;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      /* padding: 0.5rem 1rem; */
+      transition: background-color 0.7s;
+      padding-left: 15px; /* Add padding inside the navbar buttons */
+      padding-right: 15px; /* Add padding inside the navbar buttons */
+}
+
+
+    .navbar .nav-link:hover {
+      background-color: white; /* Change the background color on hover */
+      color: #023020; /* Change the text color on hover */
+    }
+
+    .navbar .nav-link:hover.btn-primary {
+      background-color: white; /* Change the background color of the "BOOK A HIKE" button on hover */
+      color: #023020; /* Change the text color of the "BOOK A HIKE" button on hover */
+    }
+
+    .navbar-brand {
+      padding: 0;
+      font-size: 40px;
+      color: white;
+      font-weight: 700;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .navbar-brand:hover{
+      color:white;
+    }
+
+    .no-underline {
+      text-decoration: none;
+      color: lightblue;
+    }
+
+    .navbar-brand img {
+      height: 100px;
+      /* Adjust the height as desired */
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+    }
+
+    .nav-spacing .nav-link {
+      margin-right: 35px;
+    }
+
+    .nav-link {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .jumbotron .btn-primary {
+      margin-top: 20px;
+    }
+
+    .bigger-button {
+      font-size: 35px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 100px;
+      padding-left: 100px;
+      border-radius: 50px;
+      letter-spacing: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-color: black;
+      font-weight: 500;
+    }
+
+    .bigger-button:hover {
+
+      background-image: url("resources/images/Dolomites_Italy.jpg");
+      border-color: white;
+      transition: background-image 1s;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 1000;
+    }
+
+    .big-text {
+      font-size: 175px;
+      color: white;
+      font-style: bold;
+      font-weight: 800;
+      margin-top: -50px;
+      margin-right: -30px;
+      opacity: 0.95;
+    }
+
+    .logo-look {
+      height: 250px;
+      /* Adjust the height as desired */
+      width: auto;
+    }
+
+    .slogan {
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .fab {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .extra {
+      font-size: 18px;
+    }
+
+    .footer-header {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .contacts {
+      margin-bottom: 20px;
+    }
+
+    .cards {
+        padding-top: 20px;
+        /* background-color: rgba(0, 0, 0, 0.7); */
+        border-radius: 10px;
+        margin-bottom: -100px;
+    }
+
+    .heading2 {
+        font-size: 60px;
+        font-weight: 700;
+        color: WHITE;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .card-title{
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .card-text {
+        /* letter-spacing: 2px; */
+        font-weight: 400;
+    }
+
+    .welcome-to {
+        
+        color: white;
+        padding: 30px;
+        font-size: 20px;
+        /* letter-spacing: 2px; */
+    }
+
+    .visit-us{
+        color:white;
+        font-size: 20px;
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+
+
+    }
+
+    .no-underline {
+      text-decoration: none;
+      color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="/resources/images/logo.png" alt="Logo">
+          Golden Guided Hikes
+        </a>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav ml-auto nav-spacing">
+            <li class="nav-item">
+              <a class="nav-link" href="hikes.html">&nbsp&nbspHIKES&nbsp&nbsp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="meetourguides.html">&nbsp&nbspMEET OUR GUIDES&nbsp&nbsp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bookahike.html">&nbsp&nbspBOOK A HIKE&nbsp&nbsp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">&nbsp&nbspABOUT US&nbsp&nbsp</a>
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+            <h2 class="heading2">About Us</h2>
+            <div class="row ">
+                <div class="col-md-6 welcome-to">
+                    <h3>Welcome to Golden Guided Hikes</h3>
+                    <p>Golden Guided Hikes is a premier adventure travel company that specializes in providing thrilling hiking experiences in breathtaking natural landscapes. We believe in the power of exploration and aim to connect people with nature's wonders.</p>
+                    <p>Our team of expert guides is passionate about adventure and committed to delivering unforgettable experiences. With their extensive knowledge and deep love for the outdoors, they ensure safe and exciting journeys for all our participants.</p>
+                    <p>At Golden Guided Hikes, we strive to create a community of nature enthusiasts who appreciate the beauty and importance of preserving our natural heritage. Join us on a hike and embark on an incredible journey of discovery.</p>
+                </div>
+                <div class="col-md-6 visit-us">
+                    <h3>Visit Our Office</h3>
+                    <p>If you have any questions or would like to meet our team in person, you can visit our office located at:</p>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp;19 Bd Malesherbes, Paris, France</p>
+                    <div class="mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.224240250476!2d2.318076215674741!3d48.87396697928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f3658d32fd9%3A0x88f762a6e92a25b0!2s19%20Boulevard%20Malesherbes%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1623151109637!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p>Feel free to drop by during our office hours:</p>
+                    <p>Monday - Friday: 9AM - 5PM (Central European Standard Time)</p>
+                    <p>We look forward to meeting you and assisting you with any inquiries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="text-white footer">
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-sm-6">
+                <text class="footer-brand">Golden Guided Hikes</text>
+                <p><text class="slogan">Discover Nature's Secrets</text></p>
+                <img class="logo-look" src="/resources/images/logo.png" alt="Logo">
+              </div>
+              <div class="col-sm-6">
+                <p class="extra"><text class="footer-header contacts">Contact Information:</text></p>
+                <p class="extra"><i class="fas fa-phone contacts"></i>&nbsp&nbsp1-476-635-5763</p>
+                <p class="extra"><i class="fas fa-envelope contacts"></i>&nbsp&nbspcontact@goldengh.com</p>
+                <p class="extra"><text >Office Hours:</text ><br> 9AM - 5PM (CES) [Mon - Fri]</p>
+                <p class="extra"><text >Trail Hours:</text> <br> 9AM - 9PM (Local) [Mon - Sat]</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-right">
+            <div class="row">
+              <div class="col-sm-6">
+                <p><text class="footer-header">Socials:</text></p>
+                <p>
+                  <a href="https://instagram.com/goldenguidedhikesig" class="no-underline">
+                    <i class="fab fa-instagram"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikesig</text>
+                  </a>
+                </p>
+                <p>
+                  <a href="https://facebook.com/goldenguidedhikesfb" class="no-underline">
+                    <i class="fab fa-facebook"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikesfb</text>
+                  </a>
+                </p>
+                <p>
+                  <a href="https://snapchat.com/add/goldenguidedhikeschat" class="no-underline">
+                    <i class="fab fa-snapchat"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikeschat</text>
+                  </a>
+                </p>
+                <p>
+                  <a href="https://youtube.com/c/goldenguidedhikesyt" class="no-underline">
+                    <i class="fab fa-youtube"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikesyt</text>
+                  </a>
+                </p>
+                <p>
+                  <a href="https://twitter.com/goldenguidedhikestw" class="no-underline">
+                    <i class="fab fa-twitter"></i><text class="extra">&nbsp;&nbsp;goldenguidedhikestw</text>
+                  </a>
+                </p>
+              </div>
+              
+              <div class="col-sm-6">
+                <p><text class="footer-header">Location:</text></p>
+                <p class="extra"><i class="fas fa-map-marker-alt contacts"></i>&nbsp&nbsp19 Bd Malesherbes</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2788780274836!2d2.318968076129383!3d48.87195997133387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fcb62f59479%3A0x69dd75fbe3b08828!2s19%20Bd%20Malesherbes%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2sca!4v1686274618051!5m2!1sen!2sca" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  </div>
+
+  <script src="js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
