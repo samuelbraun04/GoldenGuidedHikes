@@ -303,7 +303,7 @@
     }
 
     .other-btn {
-        margin-top: 70px;
+        /* margin-top: 10px; */
         width: 100%;
         background-color: black;
         color: white;
@@ -312,6 +312,7 @@
         padding-top: 20px;
         padding-bottom: 20px;
         border: 3px solid white;
+        margin-top: 30px;
     }
 
     .other-btn:hover{
@@ -322,7 +323,7 @@
     }
 
     .x {
-        margin-top: 15px;
+        margin-top: 30px;
     }
 
     .is-invalid {
@@ -332,6 +333,7 @@
 .current {
   background-color: white;
 }
+
 
   </style>
 </head>
@@ -377,10 +379,15 @@
                                   <div class="form-group">
                                     <label for="hike-option">Choose Hike:</label>
                                     <select class="form-control" id="hike-option">
-                                      <option value="option1">Option 1</option>
-                                      <option value="option2">Option 2</option>
-                                      <option value="option3">Option 3</option>
-                                      <option value="option4">Option 4</option>
+                                      <option value="option1">Choose option....</option>
+                                      <option value="option2">Sakura Bliss Hiking Trail</option>
+                                      <option value="option3">Stäuben Falls Hiking Trail</option>
+                                      <option value="option4">Yosemite Hiking Trail</option>
+                                      <option value="option5">Quinault Hiking Trail</option>
+                                      <option value="option6">Acropole Trail</option>
+                                      <option value="option7">Mont-St-Alban Hiking Trail</option>
+                                      <option value="option8">Trolltunga Hiking Trail</option>
+                                      <option value="option9">Kjeragbolten Hiking Trail</option>
                                     </select>
                                   </div>
                                 </div>
@@ -388,14 +395,11 @@
                                   <div class="form-group">
                                     <label for="difficulty-level">Choose Guide:</label>
                                     <select class="form-control" id="difficulty-level">
-                                      <option value="level1">Level 1</option>
-                                      <option value="level2">Level 2</option>
-                                      <option value="level3">Level 3</option>
-                                      <option value="level4">Level 4</option>
-                                      <option value="level5">Level 5</option>
-                                      <option value="level6">Level 6</option>
-                                      <option value="level7">Level 7</option>
-                                      <option value="level8">Level 8</option>
+                                      <option value="level1">Choose option....</option>
+                                      <option value="level2">Willard Levine</option>
+                                      <option value="level3">Eva Lovington</option>
+                                      <option value="level4">Jimmy Dunklins</option>
+                                      <option value="level5">Geoffrey Jingle</option>
                                     </select>
                                   </div>
                                 </div>
@@ -449,7 +453,7 @@
                               </div>
                               <div class="form-group x">
                                 <label for="general-info">Anything we should know?:</label>
-                                <textarea class="form-control" id="general-info" rows="4"></textarea>
+                                <textarea class="form-control" id="general-info" rows="8"></textarea>
                               </div>
                               
                           </form>
@@ -461,11 +465,14 @@
                           </div>
             
                           <div class="form-group x">
-                            <label for="date">Important Information</label>
+                            <label for="date"><strong>Important Information: </strong></label><p></p>
                             <ul>
-                                <li>All hikes start at 9AM local time.</li>
-                                <li>Nothing is provided except the experience - bring anything you may need.</li>
-                                <li>Meet at the designated starting spot.</li>
+                              <li>The two hikes that run in the current season run everyday except for Sundays.</li>
+                              <li>All hikes start at 9 AM (Local Time) from designated starting point.</li>
+                              <li>Hikes categorized as Easy, Moderate, or Difficult.</li>
+                              <li>Maximum capacity of 32 participants per hike for a comfortable group experience, each group can have a maximum of six people above 16 and four people under 16.</li>
+                              <li>Bring your own water, snacks, and necessities for the hike.</li>
+                              <li>Check the weather forecast beforehand and dress accordingly.</li>
                             </ul>
                           </div>
             
@@ -577,7 +584,7 @@
       $("#plus-btn1").click(function() {
         var input = $("#number-of-people1");
         var value = parseInt(input.val());
-        if (value < 10) {
+        if (value < 4) {
             input.val(value + 1);
         }
 
@@ -596,7 +603,7 @@
       $("#plus-btn2").click(function() {
         var input = $("#number-of-people2");
         var value = parseInt(input.val());
-        if (value < 10) {
+        if (value < 6) {
             input.val(value + 1);
         }
       });
