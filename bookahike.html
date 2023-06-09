@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Landing Page</title>
+  <link rel="icon" type="image/x-icon" href="/resources/images/logo.png">
+  <title>Book a Hike</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -371,14 +372,14 @@
             <div class="container">
                 <h2 class="heading2">Book a Hike</h2>
                 <div class="backy">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center booking-form">
                         <div class="col-md-6">
                           <form>
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
                                     <label for="hike-option">Choose Hike:</label>
-                                    <select class="form-control" id="hike-option">
+                                    <select class="form-control" id="hike-option" required>
                                       <option value="option1">Choose option....</option>
                                       <option value="option2">Sakura Bliss Hiking Trail</option>
                                       <option value="option3">Stäuben Falls Hiking Trail</option>
@@ -394,7 +395,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                     <label for="difficulty-level">Choose Guide:</label>
-                                    <select class="form-control" id="difficulty-level">
+                                    <select class="form-control" id="difficulty-level" required>
                                       <option value="level1">Choose option....</option>
                                       <option value="level2">Willard Levine</option>
                                       <option value="level3">Eva Lovington</option>
@@ -414,7 +415,7 @@
                                       <div class="input-group-prepend">
                                         <button class="btn btn-outline-secondary" type="button" id="minus-btn1"><i class="fas fa-minus"></i></button>
                                       </div>
-                                      <input type="text" class="form-control" id="number-of-people1" value="1" readonly>
+                                      <input type="text" class="form-control" id="number-of-people1" value="0" readonly>
                                       <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button" id="plus-btn1"><i class="fas fa-plus"></i></button>
                                       </div>
@@ -441,13 +442,13 @@
                                 <div class="col-md-6">
                                   <div class="form-group x">
                                     <label for="name">Your Full Name:</label>
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control" id="name" required>
                                   </div>
                                 </div>
                                 <div class="col-md-6">
                                   <div class="form-group x">
                                     <label for="email">Your Email:</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="email" class="form-control" id="email" required>
                                   </div>
                                 </div>
                               </div>
@@ -461,7 +462,7 @@
                         <div class="col-md-6">
                           <div class="form-group special-date">
                             <label for="date">Hike Date:</label>
-                            <input type="date" class="form-control" id="date">
+                            <input type="date" class="form-control" id="date" required>
                           </div>
             
                           <div class="form-group x">
@@ -479,7 +480,7 @@
             
                           <div class="row">
                             <div class="col">
-                              <button type="button" class="btn btn-primary other-btn" id="confirm">CONFIRM BOOKING</button>
+                              <button type="submit" class="btn btn-primary other-btn booking-form" id="confirm">CONFIRM BOOKING</button>
                             </div>
                           </div>
       
@@ -560,6 +561,7 @@
   <script src="js/bootstrap.bundle.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
   <script>
     $(function() {
       $(".description").accordion({
@@ -575,7 +577,7 @@
       $("#minus-btn1").click(function() {
         var input = $("#number-of-people1");
         var value = parseInt(input.val());
-        if (value > 1) {
+        if (value > 0) {
           input.val(value - 1);
         }
       });
@@ -637,8 +639,79 @@
 
   <script>
     document.getElementById("confirm").addEventListener("click", function() {
-  window.location.href = "confirmation.html";
-});
+      event.preventDefault(); // Prevent form submission
+
+      // Validate form inputs
+      var fullName = $('#name').val();
+      var hikeOption = $('#hike-option').val();
+      var guideOption = $('#difficulty-level').val();
+      var emailInput = $('#email').val();
+
+      var dateInput = $('#date').val();
+      var dates = dateInput.split('-');
+      var currentMonth = dates[1];
+      var currentDateOfMonth = dates[2];
+
+      var containsAtSymbol = emailInput.indexOf('@') !== -1;
+      
+      //check email
+      if (containsAtSymbol == false) {
+        alert("Email must include '@'!");
+        return;
+      }
+
+      if (fullName === "") {
+        alert("Full Name required!");
+        return;
+      }
+
+      //make sure hike and guide option are chosen
+      if (hikeOption === 'option1' || guideOption === 'option1') {
+        alert('Please select valid options for hike and guide!');
+        return;
+      } 
+      
+      //spring
+      if (hikeOption === 'option2' || hikeOption === 'option3') {
+        if ((currentMonth == 3 && currentDateOfMonth >= 20) || (currentMonth > 3 && currentMonth < 6) || (currentMonth == 6 && currentDateOfMonth <= 21)) {
+          window.location.href = "confirmation.html";
+        } else {
+          alert('Please choose a valid date for this hike. Spring hikes are only available from March 20th - June 21st.');
+          return;
+        } 
+      }
+      
+      //summer
+      if (hikeOption === 'option4' || hikeOption === 'option5') {
+        if ((currentMonth == 6 && currentDateOfMonth >= 22) || (currentMonth > 6 && currentMonth < 9) || (currentMonth == 9 && currentDateOfMonth <= 23)) {
+          window.location.href = "confirmation.html";
+        } else {
+          alert('Please choose a valid date for this hike. Summer hikes are only available from June 22nd - September 23rd.');
+          return;
+        } 
+      }
+      
+      //fall
+      if (hikeOption === 'option6' || hikeOption === 'option7') {
+        if ((currentMonth == 9 && currentDateOfMonth >= 24) || (currentMonth > 9 && currentMonth < 11) || (currentMonth == 11 && currentDateOfMonth <= 30)) {
+          window.location.href = "confirmation.html";
+        } else {
+          alert('Please choose a valid date for this hike. Fall hikes are only available from September 24th - November 30th');
+          return;
+        } 
+      }
+
+      //winter
+      if (hikeOption === 'option8' || hikeOption === 'option9') {
+        if ((currentMonth == 12) || (currentMonth == 1) || (currentMonth == 2) || (currentMonth == 3 && currentDateOfMonth <= 20)) {
+          window.location.href = "confirmation.html";
+        } else {
+          alert('Please choose a valid date for this hike. Winter hikes are only available from December 1st - March 20th');
+          return;
+        } 
+      }
+      
+  });
   </script>
   
 </body>
